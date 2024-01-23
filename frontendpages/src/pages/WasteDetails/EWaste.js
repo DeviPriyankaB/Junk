@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../../AppContext'; 
+
 
 const EWaste = () => {
   const history = useNavigate();
+  const { setEwasteData } = useAppContext();
+
 
   const [category, setCategory] = useState({
     wires: false,
@@ -30,7 +34,8 @@ const EWaste = () => {
 
   const handleSaveAndNext = () => {
     // Save logic (you can send data to backend or store in local storage)
-
+    const selectedItems = Object.keys(category).filter(item => category[item]);
+    setEwasteData({ category: 'Ewaste', items: selectedItems.join(', '), weight });
     // Navigate to the next page
     history('/WasteDetails/Wood');
   };

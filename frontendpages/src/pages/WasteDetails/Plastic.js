@@ -1,12 +1,10 @@
-
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../../AppContext'; 
 
 const PlasticDetails = () => {
   const history = useNavigate();
-  
+  const { setPlasticData } = useAppContext();
 
   const [category, setCategory] = useState({
     bottles: false,
@@ -30,7 +28,8 @@ const PlasticDetails = () => {
 
   const handleSaveAndNext = () => {
     // Save logic (you can send data to backend or store in local storage)
-    
+    const selectedItems = Object.keys(category).filter(item => category[item]);
+    setPlasticData({ category: 'Plastic', items: selectedItems.join(', '), weight });
     // Navigate to the next page
     history('/WasteDetails/Paper');
   };
@@ -40,7 +39,7 @@ const PlasticDetails = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" >
       <div className="mb-3">
       <h2 className="mb-4">Plastic Details</h2>
         <label className="form-label " style={{fontWeight:'bold'}}>Choose the Category:</label>

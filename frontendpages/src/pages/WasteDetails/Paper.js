@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../../AppContext'; 
+
 
 const Paper = () => {
   const history = useNavigate();
+  const { setPaperData } = useAppContext();
 
   const [category, setCategory] = useState({
     books: false,
@@ -26,7 +29,8 @@ const Paper = () => {
 
   const handleSaveAndNext = () => {
     // Save logic (you can send data to backend or store in local storage)
-
+    const selectedItems = Object.keys(category).filter(item => category[item]);
+    setPaperData({ category: 'Plastic', items: selectedItems.join(', '), weight });
     // Navigate to the next page
     history('/WasteDetails/Clothes');
   };

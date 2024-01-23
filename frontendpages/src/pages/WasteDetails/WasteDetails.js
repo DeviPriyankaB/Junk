@@ -7,6 +7,10 @@ import Clothes from './Clothes';
 import EWaste from './EWaste';
 import Wood from './Wood';
 import Placepickup from './Placepickup';
+import { AppProvider } from '../../AppContext';
+import '../../styles.css'; 
+
+
 
 
 const WasteDetails = () => {
@@ -22,6 +26,7 @@ const WasteDetails = () => {
     }
   };
   return (
+    <AppProvider>
     <div className="waste-details-container">
       <div className="header d-flex justify-content-between align-items-center">
         <h1>Waste Details</h1>
@@ -29,46 +34,45 @@ const WasteDetails = () => {
       </div>
     <div className="waste-details-container">
       <div className="category-row">
-        <div className="category-card">
-          <h5>Plastic</h5>
-          <p>Information about plastic waste.</p>
+        <div className="category-card plastic-card ">
+          <div className='card-content'>
+          <h1 className='mb-5'><strong>Plastic</strong></h1>
           <NavLink to="/wastedetails/plastic">View</NavLink>
+          </div>
         </div>
-        <div className="category-card">
-          <h5>Paper</h5>
-          <p>Information about paper waste.</p>
+        <div className="category-card paper-card">
+        <h1 className='mb-5'><strong>Paper</strong></h1>
           <NavLink to="/wastedetails/paper">View </NavLink>
         </div>
       </div>
-      <div className="category-row">
-        <div className="category-card">
-          <h5>Clothes</h5>
-          <p>Information about clothes waste.</p>
+      <div className="category-row ">
+        <div className="category-card clothes-card">
+        <h1 className='mb-5'><strong>Clothes</strong></h1>
           <NavLink to="/wastedetails/clothes">View </NavLink>
         </div>
-        <div className="category-card">
-          <h5>E-Waste</h5>
-          <p>Information about electronic waste.</p>
+        <div className="category-card ewaste-card">
+        <h1 className='mb-5'><strong>E-waste</strong></h1>
           <NavLink to="/wastedetails/e-waste">View </NavLink>
         </div>
        </div>
        <div className='category-row'>
-        <div className="category-card">
-          <h5>Wood</h5>
-          <p>Information about wood waste.</p>
+        <div className="category-card wood-card">
+        <h1 className='mb-5'><strong>Wood</strong></h1>
           <NavLink to="/wastedetails/wood">View </NavLink>
         </div>
       </div>
       <Routes>
+      
         <Route path="plastic" element={<Plastic />} />
         <Route path="paper" element={<Paper />} />
         <Route path="clothes" element={<Clothes />} />
         <Route path="e-waste" element={<EWaste />} />
         <Route path="wood" element={<Wood />} />
-        <Route path="pickup" element={<Placepickup />} />
+        <Route path="pickup" element={<Placepickup ref={pickupRef}/>} />
       </Routes>
     </div>
     </div>
+    </AppProvider>
   );
 };
 

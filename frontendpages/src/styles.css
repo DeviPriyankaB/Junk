@@ -60,7 +60,6 @@ main{
 .waste-details-container {
   margin: 20px;
 }
-
 .category-row {
   display: flex;
   justify-content: space-between;
@@ -85,11 +84,11 @@ main{
 .category-card a {
   display: inline-block;
   padding: 5px 10px;
-  background-color: #007bff;
+  background-color: #48e43d;
   color: #fff;
   text-decoration: none;
   border-radius: 3px;
-  border: 2px solid #3a27c8; /* Choose your preferred bright color */
+  border: 2px solid #0d782d; /* Choose your preferred bright color */
   transition: border-color 0.3s ease-in-out;
 }
 
@@ -108,13 +107,161 @@ main{
 }
 
 
-  .custom-light-green {
+  .custom-light-green {  /*placepickup button */
     background-color: #1cdb39; /* Your preferred light green color */
     color: #000; /* Text color that provides sufficient contrast */
-    /* You can add more styles as needed */
+    height: 50px;
+    width: 200px;
   }
 
-/* ProfilePage.css */
 
+/*wastedetail cards styles*/
+   
+   .clothes-card,
+   .wood-card,
+   .ewaste-card,
+   .paper-card,
+   .plastic-card {
+    background-color: rgba(44, 33, 33, 0.5); /* Set the background color to a slightly transparent white */
+    padding: 20px;
+  }
+  
+  .clothes-card h1,
+  .ewaste-card h1,
+  .wood-card h1,
+  .paper-card h1 {
+    color:black; /* Use a higher contrast color for the text */
+  }
+  
+  .clothes-card p,
+  .ewaste-card p,
+  .wood-card p,
+  .paper-card p {
+    color: #f00; /* Use a higher contrast color for the price */
+  }
+
+  .plastic-card {
+    position: relative;
+    background: linear-gradient(rgba(106, 104, 104, 0.6), rgba(83, 82, 82, 0.6))   }
+   
+   .plastic-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Images/plasticimg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(1.); 
+    opacity: 1.0; 
+     z-index: -1; 
+      background-blend-mode: lighten; 
+   }
+
+ 
+    
+    .clothes-card {
+      position: relative;
+      background: linear-gradient(rgba(106, 104, 104, 0.6), rgba(83, 82, 82, 0.6))   }
+     
+     .clothes-card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./Images/clothesimg1.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(1.2); 
+      opacity: 1.0; 
+       z-index: -1; 
+        background-blend-mode: lighten; 
+     }
+    
+   .ewaste-card {
+    position: relative;
+    background: linear-gradient(rgba(106, 104, 104, 0.6), rgba(83, 82, 82, 0.6))   }
+   
+   .ewaste-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Images/ewasteimg4.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(1.); 
+    opacity: 1.0; 
+     z-index: -1; 
+      background-blend-mode: lighten; 
+   }
+
+   .wood-card {
+    position: relative;
+    background: linear-gradient(rgba(106, 104, 104, 0.6), rgba(83, 82, 82, 0.6))   }
+   
+   .wood-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Images/woodimg1.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(1.5); 
+    opacity: 1.0; 
+     z-index: -1; 
+      background-blend-mode: lighten; 
+   }
+
+   .paper-card {
+    position: relative;
+    background: linear-gradient(rgba(106, 104, 104, 0.6), rgba(83, 82, 82, 0.6))   }
+   
+   .paper-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Images/paperimg2.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(1.); 
+    opacity: 1.0; 
+     z-index: -1; 
+      background-blend-mode: lighten; 
+   }
+
+.paper-card:hover,
+.plastic-card:hover,
+.ewaste-card:hover,
+.wood-card:hover,
+.clothes-card:hover{
+  height: 100%;
+ width: 49%;
+}
+
+/* home page css*/
+   img{
+    border-radius: 5%;
+    margin: 50px;
+}
+img:hover{
+    height: 75%;
+    width: 75%;
+}
+.homepage{
+    padding: 25px;
+}
 
 
