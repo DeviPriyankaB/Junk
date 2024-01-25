@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../AppContext'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../styles.css';
 
 const PlasticDetails = () => {
   const history = useNavigate();
@@ -110,7 +112,7 @@ const PlasticDetails = () => {
         </div>
       </div>
 
-      <button className="btn btn-primary" onClick={handleSaveAndNext}>
+      <button className="btn btn-primary " onClick={handleSaveAndNext}>
         Save and Next
       </button>
     </div></div>

@@ -1,7 +1,7 @@
 // WasteDetails.js
 import React ,{useRef} from 'react';
 import { Route, Routes, NavLink ,useNavigate} from 'react-router-dom';
-import Plastic from './/Plastic';
+import Plastic from './Plastic';
 import Paper from './Paper';
 import Clothes from './Clothes';
 import EWaste from './EWaste';
@@ -9,8 +9,6 @@ import Wood from './Wood';
 import Placepickup from './Placepickup';
 import { AppProvider } from '../../AppContext';
 import '../../styles.css'; 
-
-
 
 
 const WasteDetails = () => {
@@ -27,6 +25,7 @@ const WasteDetails = () => {
   };
   return (
     <AppProvider>
+  
     <div className="waste-details-container">
       <div className="header d-flex justify-content-between align-items-center">
         <h1>Waste Details</h1>
@@ -62,7 +61,6 @@ const WasteDetails = () => {
         </div>
       </div>
       <Routes>
-      
         <Route path="plastic" element={<Plastic />} />
         <Route path="paper" element={<Paper />} />
         <Route path="clothes" element={<Clothes />} />

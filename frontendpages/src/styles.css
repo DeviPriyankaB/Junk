@@ -264,4 +264,13 @@ img:hover{
     padding: 25px;
 }
 
+.confirmpickup{
+  height: 50px;
+  width: 200px;
+}
 
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+}

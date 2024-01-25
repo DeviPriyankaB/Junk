@@ -1,26 +1,41 @@
-// // /src/components/Waste Details/wastedetails.js
+import React, { useContext } from 'react';
+import { ConfirmContext ,useConfirmContext} from '../ConfirmContext';
 
-// import React, { useState } from 'react';
 
-// const MyWaste = () => {
-//   const [wasteList, setWasteList] = useState([]);
+const MyWaste = () => {
+  const { wasteData } = useContext(ConfirmContext);
+  const { totalCoins } = useConfirmContext();
 
-//   const addToWaste = (details) => {
-//     setWasteList((prev) => [...prev, details]);
-//   };
+  if (!wasteData || !wasteData.category || wasteData.weight === 0) {
+    return <div>you didn't placed any pickup till now</div>;
+  }
 
-//   return (
-//     <div className="center-align">
-//       <h2>My Waste</h2>
-//       <ul>
-//         {wasteList.map((item, index) => (
-//           <li key={index}>
-//             Category: {item.category.join(', ')}, Weight: {item.weight}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
+  const categoryItems = wasteData.category.split(' ');
+  const categoryList = categoryItems.map((item, index) => {
+    const categoryName = item.split(':')[0];
+    const categoryItemsText = item.split(':')[1];
+    return (
+      <div key={index}>
+        <strong>{categoryName}-  </strong> {categoryItemsText}
+      </div>
+    );
+  });
 
-// export default MyWaste;
+  return (
+    <div>
+      <br></br>
+      <h1>My Waste</h1>
+      {categoryList}
+      <div>
+        <br></br>
+        <strong>Total Weight:</strong> {wasteData.weight} Kg
+        <h2>Total Coins: {totalCoins}</h2>
+      </div>
+    </div>
+  );
+};
+export default MyWaste;
+
+
+
+
